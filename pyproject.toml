@@ -25,6 +25,9 @@ dev = ["pytest>=8.0.0"]
 [project.scripts]
 novelforge = "novelforge.cli:app"
 
+[tool.hatch.build.targets.wheel]
+packages = ["novelforge"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["."]

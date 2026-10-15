@@ -7,6 +7,9 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /app
 COPY . /app
+RUN python -m zipfile -e NovelForge_v0.3_online_mobile.zip /tmp/novelforge_bundle \
+    && cp -a /tmp/novelforge_bundle/NovelForge/. /app/ \
+    && rm -rf /tmp/novelforge_bundle
 RUN pip install --no-cache-dir .
 RUN mkdir -p /data/novelforge
 
